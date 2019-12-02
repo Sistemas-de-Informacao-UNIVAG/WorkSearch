@@ -25,7 +25,7 @@ Tomamos como exemplo o Boleto do Caixa Econômica, onde temos:
 Sim, pois facilita para um desenvolvedor para que seja dado continuidade no Projeto BoletoPHP para o desenvolvimento dos demais bancos, pois o principal trabalho para criar o boleto de um novo banco é criar o arquivo php de funções ( no caso acima o funcoes_cef.php) , onde estão as regras de cada banco para a geração das 2 principais informações do boleto que são a Linha Digitável e o Código de Barras, já que no layout_xxxx.php muda apenas a logo do banco e no arquivo boleto_xxxx.php acrescenta poucas variáveis específicas de cada banco.
 
 ## Cronograma de Desenvolvimento - Projeto Integrador 01
-|----------------------------------------------------------------------------------------------|
+
 | Atividade                                       | Fase RUP  |   %  | Início     | Término    |
 |-------------------------------------------------|-----------|------|------------|------------|
 |Diagrama de Problema/Solução                     | Iniciação | 100% | 05/08/2019 | 08/08/2019 |
@@ -35,4 +35,4 @@ Sim, pois facilita para um desenvolvedor para que seja dado continuidade no Proj
 |Fluxo do Modelo de Processos de Negócio (BPMN)   | Iniciação | 25%  | 19/08/2019 | 24/08/2019 |
 |Descritivo de Análise do Processo                | Iniciação | 70%  | 24/08/2019 | 29/08/2019 |
 |Desenho do Processo de Negócio - Diagrama (BPMN) | Iniciação | 50%  | 09/08/2019 | 11/08/2019 |
-|----------------------------------------------------------------------------------------------|
+
