@@ -121,14 +121,8 @@ class _ResetPasswordPage extends State<ResetPasswordPage> {
                               FirebaseAuth.instance
                                   .sendPasswordResetEmail(
                                       email: _controladoremail.text)
-                                  .then((value) {
-                                final snackBar = SnackBar(
-                                    content:
-                                        Text('Favor verificar seu e-mail!'));
-                                ScaffoldMessenger.of(context)
-                                    .showSnackBar(snackBar);
-                                //Navigator.of(context).pop();
-                              });
+                                  .then((value) => print("checar o email!"));
+
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(

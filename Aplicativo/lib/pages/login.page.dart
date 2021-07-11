@@ -1,13 +1,9 @@
-import 'package:WorkSearch/pages/config.page.dart';
-import 'package:WorkSearch/pages/home.page.dart';
+import 'package:WorkSearch/pages/navegacao_telas.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-
+import 'signup.page.dart';
 import './reset-password.page.dart';
-//import './home.page.dart';
 import './signup.page.dart';
 import 'package:flutter/material.dart';
-//import './pedido.page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -101,8 +97,8 @@ class LoginPageState extends State<LoginPage> {
                   end: Alignment.bottomRight,
                   stops: [0.3, 1],
                   colors: [
-                    Color(0xFFF58524),
-                    Color(0XFFF92B7F),
+                    Color(0xFF6200EA),
+                    Color(0XFF8C9EFF),
                   ],
                 ),
                 borderRadius: BorderRadius.all(
@@ -152,7 +148,7 @@ class LoginPageState extends State<LoginPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HomePage()),
+                                    builder: (context) => Pageconfiguration()),
                               );
                             } else {
                               final snackBar =

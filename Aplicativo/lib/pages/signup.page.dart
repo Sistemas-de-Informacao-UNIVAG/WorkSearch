@@ -1,11 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:intl/intl.Dart';
-
-import './login.page.dart';
 import 'package:flutter/material.dart';
 //import './Widgets/Auxiliar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:validatorless/validatorless.dart';
 
 /*class user {
   final String nome;
@@ -129,13 +126,8 @@ class _SignupPageState extends State<SignupPage> {
         height: 20,
       ),
       TextFormField(
-        validator: (value) {
-          if (value.isEmpty) return "O campo é Obrigatório!";
-          if (value.length < 5)
-            return "O campo precisa ter mais de 4 caracteres.";
-          return null;
-        },
         controller: _controladornome,
+
         // autofocus: true,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
@@ -146,6 +138,8 @@ class _SignupPageState extends State<SignupPage> {
             fontSize: 20,
           ),
         ),
+        validator: Validatorless.required("Nome Obrigatório"),
+
         style: TextStyle(
           fontSize: 20,
         ),
@@ -155,6 +149,7 @@ class _SignupPageState extends State<SignupPage> {
       ),
       TextFormField(
         controller: _controladoremail,
+
         // autofocus: true,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
@@ -165,6 +160,11 @@ class _SignupPageState extends State<SignupPage> {
             fontSize: 20,
           ),
         ),
+        validator: Validatorless.multiple([
+          Validatorless.required('E-mail Obrigatório'),
+          Validatorless.email("E-mail Incorreto!")
+        ]),
+
         style: TextStyle(
           fontSize: 20,
         ),
@@ -174,6 +174,7 @@ class _SignupPageState extends State<SignupPage> {
       ),
       TextFormField(
         controller: _controladorTelefone,
+
         // autofocus: true,
         keyboardType: TextInputType.number,
         obscureText: false,
@@ -185,6 +186,7 @@ class _SignupPageState extends State<SignupPage> {
             fontSize: 20,
           ),
         ),
+
         style: TextStyle(fontSize: 20),
       ),
       TextFormField(
@@ -292,6 +294,7 @@ class _SignupPageState extends State<SignupPage> {
             fontSize: 20,
           ),
         ),
+        validator: Validatorless.cpf("CPF Não é válido"),
         style: TextStyle(fontSize: 20),
       ),
       TextFormField(
@@ -307,7 +310,7 @@ class _SignupPageState extends State<SignupPage> {
             fontSize: 20,
           ),
           suffixIcon: IconButton(
-            icon: Icon(_secureText ? Icons.remove_red_eye : Icons.security),
+            icon: Icon(_secureText ? Icons.visibility : Icons.visibility_off),
             onPressed: () {
               setState(() {
                 _secureText = !_secureText;
@@ -331,7 +334,9 @@ class _SignupPageState extends State<SignupPage> {
             fontSize: 20,
           ),
           suffixIcon: IconButton(
-            icon: Icon(_secureText ? Icons.remove_red_eye : Icons.security),
+            icon: Icon(_secureTextrepetirsenha
+                ? Icons.visibility
+                : Icons.visibility_off),
             onPressed: () {
               setState(() {
                 _secureTextrepetirsenha = !_secureTextrepetirsenha;
